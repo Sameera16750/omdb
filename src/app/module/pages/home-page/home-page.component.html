@@ -1,0 +1,29 @@
+<div class="header">
+  <div class="container flex justify-between items-center">
+    <h1>OMDB Search</h1>
+    <form [formGroup]="searchForm" class="flex gap-x-[1rem]" (ngSubmit)="getMovieByName()">
+      <input type="text" placeholder="Search a Movie" class="search-input" formControlName="movieName">
+      <button type="submit"
+              class="search-button">
+        Search
+      </button>
+    </form>
+  </div>
+</div>
+@if (!loading) {
+  @if (movieList.length > 0) {
+    <div class="container mt-6 flex flex-wrap gap-[1rem] py-[2rem]">
+      @for (item of movieList; let i = $index; track i) {
+        <movie-card [movieDetails]="item" class="w-full lg:w-[calc((100%-1rem)/2)] "></movie-card>
+      }
+    </div>
+  } @else {
+    <div class="container flex items-center justify-center h-full">
+      <div class="message" [class.error]="message.isError">
+        {{ message.message }}
+      </div>
+    </div>
+  }
+} @else {
+  <api-data-loader></api-data-loader>
+}

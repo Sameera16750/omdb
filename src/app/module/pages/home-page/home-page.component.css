@@ -1,0 +1,36 @@
+.header {
+  box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px;
+  @apply py-[1rem]
+}
+
+.search-input:focus-visible {
+  outline: none;
+}
+
+.search-button {
+  box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
+  @apply bg-[var(--primary-color-blue)] py-[0.5rem] px-[1rem] text-[--primary-color-white] rounded-[5px] uppercase
+}
+
+
+.p-message-detail {
+  @apply w-full text-center
+}
+
+.p-message-wrapper {
+  @apply w-full justify-center flex
+}
+
+.message {
+  @apply bg-blue-50 p-[1rem] rounded-[5px] text-[blue] border border-[blue] flex items-center justify-center
+}
+
+.error {
+  @apply bg-red-50 text-[red] border-[red]
+}
+
+@media screen and (max-width: 576px) {
+  .search-input {
+    width: 120px;
+  }
+}

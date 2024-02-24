@@ -1,0 +1,12 @@
+.movie-card{
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  @apply flex flex-wrap;
+}
+
+.details-button{
+  @apply bg-[var(--primary-color-blue)] py-[0.5rem] px-[1rem] text-[--primary-color-white] rounded-[5px] uppercase
+}
+
+.details-title{
+  @apply text-[0.9rem] text-[var(--primary-color-dark-blue)] mt-[1.5rem]
+}
